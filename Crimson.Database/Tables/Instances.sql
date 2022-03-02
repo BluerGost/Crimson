@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Instances]
+(
+	[InstanceID] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [SOPClassUID] NVARCHAR(64) NOT NULL, 
+    [SOPInstanceUID] NVARCHAR(64) NOT NULL,
+    [SeriesID] INT NOT NULL, 
+    CONSTRAINT UNIQUE_SOPClassID_SOPInstanceUID UNIQUE(SOPClassUID, SOPInstanceUID), 
+    CONSTRAINT [FK_Instances_Series] FOREIGN KEY ([SeriesID]) REFERENCES [Series]([SeriesID]) 
+)

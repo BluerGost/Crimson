@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="303c289e-87f5-42fb-9b06-0dfab66ffce9" ChangeDateTime="03/02/2022 00:21:39">
+    <Property Name="ElementName" Value="[dbo].[Patients].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Patients]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PatientId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="81309427-7325-4ff0-9110-0c6c98116dc3" ChangeDateTime="03/02/2022 00:22:35">
+    <Property Name="ElementName" Value="[dbo].[Instances].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Instances]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="InstanceID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ede3c2f8-976c-40c6-9e67-674364a0a47b" ChangeDateTime="03/02/2022 00:22:46">
+    <Property Name="ElementName" Value="[dbo].[Series].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Series]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SeriesID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ddb9bd96-9ca4-48da-985a-5f3b24f7e064" ChangeDateTime="03/02/2022 00:24:53">
+    <Property Name="ElementName" Value="[dbo].[Instances].[SOP]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Instances]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SOPClassUID" />
+  </Operation>
+</Operations>
