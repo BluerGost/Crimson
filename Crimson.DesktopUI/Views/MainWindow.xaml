@@ -15,6 +15,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
@@ -29,19 +30,33 @@
                 <MenuItem Header="Close Folder" InputGestureText="Ctrl+K Ctrl+C"/>
             </MenuItem>
         </Menu>
+
+        <!--Row 1, Icon Bar-->
+        <!--Ref:https://stackoverflow.com/questions/17737988/wpf-button-with-drop-down-list-and-arrow-->
+        <Menu Grid.Row="1">
+            <MenuItem>
+                <MenuItem.Icon >
+                    <Image></Image>
+                </MenuItem.Icon>
+            </MenuItem>
+        </Menu>
         
         <!--Row 1, Icon Bar-->
-        <DockPanel Grid.Row="1">
+        <DockPanel Grid.Row="2">
             <!--File selection panel-->
-            <ListBox DockPanel.Dock="Left"></ListBox>
+            <TreeView>
+                <TreeViewItem>
+                    
+                </TreeViewItem>
+            </TreeView>
             <!--File information panel-->
             <ListBox DockPanel.Dock="Right"></ListBox>
-            <InkCanvas></InkCanvas>
+            <InkCanvas Background="Black"></InkCanvas>
         </DockPanel>
         
         
         <!--Row 2, Footer-->
-        <DockPanel Grid.Row="2" LastChildFill="False">
+        <DockPanel Grid.Row="3" LastChildFill="False">
             <Slider></Slider>
         </DockPanel>
     </Grid>
