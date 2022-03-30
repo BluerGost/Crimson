@@ -6,41 +6,43 @@
         xmlns:local="clr-namespace:Crimson.DesktopUI.Views"
         xmlns:viewmodel="clr-namespace:Crimson.DesktopUI.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="DarkGray">
+        Title="Crimson DICOM Viewer" Height="450" Width="800" Background="DarkGray">
     
     <Window.DataContext>
         <viewmodel:MainWindowViewModel/>
     </Window.DataContext>
     
-    <Grid Margin="10">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
+
+        <!--Row 0, Menue Bar-->
+        <Menu Grid.Row="0" FontSize="15" >
+            <MenuItem Header="_File">
+                <MenuItem Header="Open File" InputGestureText="Ctrl+O"/>
+                <MenuItem Header="Close File" InputGestureText="Ctrl+C"/>
+                <Separator/>
+                <MenuItem Header="Open Folder" InputGestureText="Ctrl+K Ctrl+O"/>
+                <MenuItem Header="Close Folder" InputGestureText="Ctrl+K Ctrl+C"/>
+            </MenuItem>
+        </Menu>
         
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <DockPanel Grid.Row="0" LastChildFill="False" Margin="0,0,0,10">
-            <Button Content="Open Files" Padding="5" BorderBrush="Black" BorderThickness="1.5"/>
+        <!--Row 1, Icon Bar-->
+        <DockPanel Grid.Row="1">
+            <!--File selection panel-->
+            <ListBox DockPanel.Dock="Left"></ListBox>
+            <!--File information panel-->
+            <ListBox DockPanel.Dock="Right"></ListBox>
+            <InkCanvas></InkCanvas>
         </DockPanel>
-
-        <Canvas Grid.Row="1" Background="white" Margin="0,0,0,10">
-            <Image/>
-        </Canvas>
-
-        <StackPanel Grid.Row="2" Orientation="Vertical">
-
-            <GroupBox Header="Image" Margin="0,0,0,10">
-                <Slider/>
-            </GroupBox>
-
-            <GroupBox Header="Brighness">
-                <Slider/>
-            </GroupBox>
-            
-        </StackPanel>
+        
+        
+        <!--Row 2, Footer-->
+        <DockPanel Grid.Row="2" LastChildFill="False">
+            <Slider></Slider>
+        </DockPanel>
     </Grid>
 </Window>
